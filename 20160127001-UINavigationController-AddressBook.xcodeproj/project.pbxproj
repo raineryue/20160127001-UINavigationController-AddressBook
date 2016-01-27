@@ -15,6 +15,7 @@
 		D50E148E1C58A6440008EF51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D50E148C1C58A6440008EF51 /* LaunchScreen.storyboard */; };
 		D50E14991C58A6440008EF51 /* _0160127001_UINavigationController_AddressBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14981C58A6440008EF51 /* _0160127001_UINavigationController_AddressBookTests.m */; };
 		D50E14A41C58A6440008EF51 /* _0160127001_UINavigationController_AddressBookUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14A31C58A6440008EF51 /* _0160127001_UINavigationController_AddressBookUITests.m */; };
+		D50E14B71C58AD070008EF51 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14B61C58AD070008EF51 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		D50E149F1C58A6440008EF51 /* 20160127001-UINavigationController-AddressBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "20160127001-UINavigationController-AddressBookUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D50E14A31C58A6440008EF51 /* _0160127001_UINavigationController_AddressBookUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _0160127001_UINavigationController_AddressBookUITests.m; sourceTree = "<group>"; };
 		D50E14A51C58A6440008EF51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D50E14B51C58AD070008EF51 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D50E14B61C58AD070008EF51 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		D50E147D1C58A6440008EF51 /* 20160127001-UINavigationController-AddressBook */ = {
 			isa = PBXGroup;
 			children = (
+				D50E14B11C58AC820008EF51 /* Classes */,
 				D50E14811C58A6440008EF51 /* AppDelegate.h */,
 				D50E14821C58A6440008EF51 /* AppDelegate.m */,
 				D50E14841C58A6440008EF51 /* ViewController.h */,
@@ -138,6 +142,39 @@
 				D50E14A51C58A6440008EF51 /* Info.plist */,
 			);
 			path = "20160127001-UINavigationController-AddressBookUITests";
+			sourceTree = "<group>";
+		};
+		D50E14B11C58AC820008EF51 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D50E14B41C58ACC30008EF51 /* Models */,
+				D50E14B31C58ACB40008EF51 /* Controllers */,
+				D50E14B21C58ACA90008EF51 /* Views */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		D50E14B21C58ACA90008EF51 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D50E14B31C58ACB40008EF51 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D50E14B51C58AD070008EF51 /* LoginViewController.h */,
+				D50E14B61C58AD070008EF51 /* LoginViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D50E14B41C58ACC30008EF51 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D50E14B71C58AD070008EF51 /* LoginViewController.m in Sources */,
 				D50E14861C58A6440008EF51 /* ViewController.m in Sources */,
 				D50E14831C58A6440008EF51 /* AppDelegate.m in Sources */,
 				D50E14801C58A6440008EF51 /* main.m in Sources */,
