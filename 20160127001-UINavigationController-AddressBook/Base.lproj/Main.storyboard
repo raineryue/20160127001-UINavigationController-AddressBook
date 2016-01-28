@@ -84,59 +84,77 @@
                         <outlet property="loginNameTextField" destination="hiD-ns-XiF" id="71V-1B-xq5"/>
                         <outlet property="memberSwitch" destination="sIi-Dp-Xu1" id="daB-Jb-JdK"/>
                         <outlet property="passwordTextField" destination="6j1-gS-asG" id="UDI-Dp-CZ2"/>
-                        <segue destination="rgj-NX-dBv" kind="push" identifier="loginToList" id="Tev-xV-xvQ"/>
+                        <segue destination="6N5-Jq-Keb" kind="push" identifier="loginToList" id="dCS-Wm-Eyk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="571" y="294"/>
         </scene>
-        <!--通讯录列表-->
-        <scene sceneID="plb-f7-WWU">
+        <!--私人通讯录列表-->
+        <scene sceneID="rsQ-iz-0kC">
             <objects>
-                <tableViewController id="rgj-NX-dBv" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lx5-Zg-Bl7">
+                <tableViewController id="6N5-Jq-Keb" customClass="AddressBookTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="a7S-bq-uxK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="YJw-Ev-qOp">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="addressBookTableViewCellIdentifier" textLabel="Vle-HJ-lva" detailTextLabel="4Kv-VL-EJA" style="IBUITableViewCellStyleValue1" id="d5T-T4-n2S">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YJw-Ev-qOp" id="1ev-yT-X33">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d5T-T4-n2S" id="jGA-FD-L0f">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vle-HJ-lva">
+                                            <rect key="frame" x="15" y="12" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Kv-VL-EJA">
+                                            <rect key="frame" x="243" y="12" width="42" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="IyW-A2-xSA" kind="push" id="Fex-Zs-ZiW"/>
+                                    <segue destination="IyW-A2-xSA" kind="push" id="m1v-TK-CdA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="rgj-NX-dBv" id="BJV-Bi-7dT"/>
-                            <outlet property="delegate" destination="rgj-NX-dBv" id="51A-3P-61E"/>
+                            <outlet property="dataSource" destination="6N5-Jq-Keb" id="MaW-Zy-3Ek"/>
+                            <outlet property="delegate" destination="6N5-Jq-Keb" id="WAT-Jr-Q4E"/>
                         </connections>
                     </tableView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="通讯录列表" id="cty-pM-Em2">
-                        <barButtonItem key="backBarButtonItem" title="返回" id="0Rb-Al-JT4"/>
-                        <barButtonItem key="leftBarButtonItem" title="注销" id="rln-OD-hBR"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LgP-yZ-vow">
+                    <navigationItem key="navigationItem" title="私人通讯录列表" id="bOx-Uc-K9h">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="756-g6-RZ0"/>
+                        <barButtonItem key="leftBarButtonItem" title="注销" id="Z2I-tV-3in">
                             <connections>
-                                <segue destination="gqa-Z8-CfG" kind="push" id="ONc-7V-q3I"/>
+                                <action selector="logoutButtonClickAction:" destination="6N5-Jq-Keb" id="mrJ-Yu-dRf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rNv-kY-edQ">
+                            <connections>
+                                <segue destination="gqa-Z8-CfG" kind="push" id="k96-w6-ryS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zKb-T9-WWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gtl-Pd-vYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946" y="294"/>
+            <point key="canvasLocation" x="964" y="294"/>
         </scene>
         <!--添加联系人-->
         <scene sceneID="GkI-1r-5PH">
             <objects>
-                <viewController id="gqa-Z8-CfG" sceneMemberID="viewController">
+                <viewController id="gqa-Z8-CfG" customClass="AddressBookCreateViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dge-bZ-QV5"/>
                         <viewControllerLayoutGuide type="bottom" id="xFg-h7-moW"/>
@@ -175,6 +193,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="createButtonClickAction:" destination="gqa-Z8-CfG" eventType="touchUpInside" id="5aw-1C-5sH"/>
                                     <action selector="loginButtonClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gWu-J9-XUy"/>
                                 </connections>
                             </button>
@@ -184,6 +203,11 @@
                     <navigationItem key="navigationItem" title="添加联系人" id="ZFF-pZ-J7U">
                         <barButtonItem key="backBarButtonItem" title="返回" id="msT-3O-oCE"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="createButton" destination="c4J-hz-yR6" id="6q2-9z-Wgs"/>
+                        <outlet property="phoneNumTextField" destination="US7-L5-0yy" id="bTQ-sw-rf8"/>
+                        <outlet property="userNameTextField" destination="hyw-mM-BgB" id="Uay-ok-k0F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ESa-SM-6qM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,7 +232,7 @@
         <!--修改联系人-->
         <scene sceneID="ORY-W2-Iyh">
             <objects>
-                <viewController id="IyW-A2-xSA" sceneMemberID="viewController">
+                <viewController id="IyW-A2-xSA" customClass="AddressBookEditViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j9w-7p-Y5h"/>
                         <viewControllerLayoutGuide type="bottom" id="fit-wc-kV5"/>
@@ -223,7 +247,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入姓名（＊）" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hBl-2n-BTj">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入姓名（＊）" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hBl-2n-BTj">
                                 <rect key="frame" x="68" y="82" width="241" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -234,12 +258,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入电话（＊）" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MmR-3v-b2L">
-                                <rect key="frame" x="68" y="142" width="241" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ShJ-7t-bVH">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ShJ-7t-bVH">
                                 <rect key="frame" x="58" y="210" width="205" height="35"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -248,15 +267,31 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtonClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hDV-UF-rdl"/>
+                                    <action selector="makeSureButtonClickAction:" destination="IyW-A2-xSA" eventType="touchUpInside" id="8WH-iJ-CKV"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入电话（＊）" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MmR-3v-b2L">
+                                <rect key="frame" x="68" y="142" width="241" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="修改联系人" id="X7n-wF-V5Q">
-                        <barButtonItem key="rightBarButtonItem" title="编辑" id="H65-8m-wpM"/>
+                        <barButtonItem key="rightBarButtonItem" title="编辑" id="H65-8m-wpM">
+                            <connections>
+                                <action selector="editBarButtonItemClickAction:" destination="IyW-A2-xSA" id="0SW-B7-O8I"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="editBarButtonItem" destination="H65-8m-wpM" id="l7m-44-KJO"/>
+                        <outlet property="makeSureButton" destination="ShJ-7t-bVH" id="G2O-pW-T9s"/>
+                        <outlet property="phoneNumTextField" destination="MmR-3v-b2L" id="DHN-iI-46G"/>
+                        <outlet property="userNameTextField" destination="hBl-2n-BTj" id="bbn-8n-60r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1g-5j-d7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

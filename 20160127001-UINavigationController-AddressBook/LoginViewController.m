@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "MBProgressHUD.h"
 
 @interface LoginViewController ()
 
@@ -24,6 +25,8 @@
     [super viewDidLoad];
     
     [self monitorTextFieldAction];
+    
+    [self textFieldValueChangedAction:nil];
 }
 
 - (void)monitorTextFieldAction {
@@ -55,7 +58,19 @@
 }
 
 - (IBAction)loginButtonClickAction:(id)sender {
-    [self performSegueWithIdentifier:@"loginToList" sender:nil];
+    MBProgressHUD *progress = [[MBProgressHUD alloc] init];
+    
+    [progress show:YES];
+    
+    if ([self.loginNameTextField.text isEqualToString:@"Rainer"] && [self.passwordTextField.text isEqualToString:@"123456"]) {
+        [progress hide:YES];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self performSegueWithIdentifier:@"loginToList" sender:nil];
+        });
+    } else {
+        [progress hide:YES];
+    }
 }
 
 #pragma mark - Navigation

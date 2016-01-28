@@ -16,6 +16,12 @@
 		D50E14991C58A6440008EF51 /* _0160127001_UINavigationController_AddressBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14981C58A6440008EF51 /* _0160127001_UINavigationController_AddressBookTests.m */; };
 		D50E14A41C58A6440008EF51 /* _0160127001_UINavigationController_AddressBookUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14A31C58A6440008EF51 /* _0160127001_UINavigationController_AddressBookUITests.m */; };
 		D50E14B71C58AD070008EF51 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14B61C58AD070008EF51 /* LoginViewController.m */; };
+		D50E14BA1C59AAE10008EF51 /* AddressBookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14B91C59AAE10008EF51 /* AddressBookTableViewController.m */; };
+		D50E14BD1C59AD900008EF51 /* AddressBookCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14BC1C59AD900008EF51 /* AddressBookCreateViewController.m */; };
+		D50E14C01C59ADCB0008EF51 /* AddressBookEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14BF1C59ADCB0008EF51 /* AddressBookEditViewController.m */; };
+		D50E14C31C59B4FA0008EF51 /* AddressBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14C21C59B4FA0008EF51 /* AddressBookModel.m */; };
+		D50E14C61C59EE0C0008EF51 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14C51C59EE0C0008EF51 /* NSArray+Log.m */; };
+		D50E14C91C5A10D70008EF51 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14C81C5A10D70008EF51 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,18 @@
 		D50E14A51C58A6440008EF51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D50E14B51C58AD070008EF51 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D50E14B61C58AD070008EF51 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D50E14B81C59AAE10008EF51 /* AddressBookTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookTableViewController.h; sourceTree = "<group>"; };
+		D50E14B91C59AAE10008EF51 /* AddressBookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookTableViewController.m; sourceTree = "<group>"; };
+		D50E14BB1C59AD900008EF51 /* AddressBookCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookCreateViewController.h; sourceTree = "<group>"; };
+		D50E14BC1C59AD900008EF51 /* AddressBookCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookCreateViewController.m; sourceTree = "<group>"; };
+		D50E14BE1C59ADCB0008EF51 /* AddressBookEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookEditViewController.h; sourceTree = "<group>"; };
+		D50E14BF1C59ADCB0008EF51 /* AddressBookEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookEditViewController.m; sourceTree = "<group>"; };
+		D50E14C11C59B4FA0008EF51 /* AddressBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookModel.h; sourceTree = "<group>"; };
+		D50E14C21C59B4FA0008EF51 /* AddressBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookModel.m; sourceTree = "<group>"; };
+		D50E14C41C59EE0C0008EF51 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		D50E14C51C59EE0C0008EF51 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		D50E14C71C5A10D70008EF51 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		D50E14C81C5A10D70008EF51 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +128,8 @@
 				D50E14841C58A6440008EF51 /* ViewController.h */,
 				D50E14851C58A6440008EF51 /* ViewController.m */,
 				D50E14871C58A6440008EF51 /* Main.storyboard */,
+				D50E14C71C5A10D70008EF51 /* MBProgressHUD.h */,
+				D50E14C81C5A10D70008EF51 /* MBProgressHUD.m */,
 				D50E148A1C58A6440008EF51 /* Assets.xcassets */,
 				D50E148C1C58A6440008EF51 /* LaunchScreen.storyboard */,
 				D50E148F1C58A6440008EF51 /* Info.plist */,
@@ -166,6 +186,12 @@
 			children = (
 				D50E14B51C58AD070008EF51 /* LoginViewController.h */,
 				D50E14B61C58AD070008EF51 /* LoginViewController.m */,
+				D50E14B81C59AAE10008EF51 /* AddressBookTableViewController.h */,
+				D50E14B91C59AAE10008EF51 /* AddressBookTableViewController.m */,
+				D50E14BB1C59AD900008EF51 /* AddressBookCreateViewController.h */,
+				D50E14BC1C59AD900008EF51 /* AddressBookCreateViewController.m */,
+				D50E14BE1C59ADCB0008EF51 /* AddressBookEditViewController.h */,
+				D50E14BF1C59ADCB0008EF51 /* AddressBookEditViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +199,10 @@
 		D50E14B41C58ACC30008EF51 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D50E14C41C59EE0C0008EF51 /* NSArray+Log.h */,
+				D50E14C51C59EE0C0008EF51 /* NSArray+Log.m */,
+				D50E14C11C59B4FA0008EF51 /* AddressBookModel.h */,
+				D50E14C21C59B4FA0008EF51 /* AddressBookModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -307,10 +337,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D50E14C61C59EE0C0008EF51 /* NSArray+Log.m in Sources */,
+				D50E14BD1C59AD900008EF51 /* AddressBookCreateViewController.m in Sources */,
+				D50E14C01C59ADCB0008EF51 /* AddressBookEditViewController.m in Sources */,
 				D50E14B71C58AD070008EF51 /* LoginViewController.m in Sources */,
 				D50E14861C58A6440008EF51 /* ViewController.m in Sources */,
+				D50E14BA1C59AAE10008EF51 /* AddressBookTableViewController.m in Sources */,
 				D50E14831C58A6440008EF51 /* AppDelegate.m in Sources */,
+				D50E14C91C5A10D70008EF51 /* MBProgressHUD.m in Sources */,
 				D50E14801C58A6440008EF51 /* main.m in Sources */,
+				D50E14C31C59B4FA0008EF51 /* AddressBookModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -439,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,6 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "20160127001-UINavigationController-AddressBook/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rainer.-0160127001-UINavigationController-AddressBook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -463,6 +500,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "20160127001-UINavigationController-AddressBook/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rainer.-0160127001-UINavigationController-AddressBook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
