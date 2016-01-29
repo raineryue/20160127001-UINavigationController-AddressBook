@@ -22,6 +22,7 @@
 		D50E14C31C59B4FA0008EF51 /* AddressBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14C21C59B4FA0008EF51 /* AddressBookModel.m */; };
 		D50E14C61C59EE0C0008EF51 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14C51C59EE0C0008EF51 /* NSArray+Log.m */; };
 		D50E14C91C5A10D70008EF51 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14C81C5A10D70008EF51 /* MBProgressHUD.m */; };
+		D50E14CC1C5AF9F80008EF51 /* AddressBookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D50E14CB1C5AF9F80008EF51 /* AddressBookTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		D50E14C51C59EE0C0008EF51 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		D50E14C71C5A10D70008EF51 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		D50E14C81C5A10D70008EF51 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		D50E14CA1C5AF9F80008EF51 /* AddressBookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookTableViewCell.h; sourceTree = "<group>"; };
+		D50E14CB1C5AF9F80008EF51 /* AddressBookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +180,8 @@
 		D50E14B21C58ACA90008EF51 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D50E14CA1C5AF9F80008EF51 /* AddressBookTableViewCell.h */,
+				D50E14CB1C5AF9F80008EF51 /* AddressBookTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				D50E14C91C5A10D70008EF51 /* MBProgressHUD.m in Sources */,
 				D50E14801C58A6440008EF51 /* main.m in Sources */,
 				D50E14C31C59B4FA0008EF51 /* AddressBookModel.m in Sources */,
+				D50E14CC1C5AF9F80008EF51 /* AddressBookTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

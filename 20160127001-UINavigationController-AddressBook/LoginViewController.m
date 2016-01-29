@@ -21,21 +21,36 @@
 
 @implementation LoginViewController
 
+#pragma mark - 控制器视图加载
+/**
+ *  控制器视图完成加载
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 监听文本框值改变事件
     [self monitorTextFieldAction];
     
+    // 自动调用文本框值改变事件
     [self textFieldValueChangedAction:nil];
 }
 
+/**
+ *  监听文本框值改变事件
+ */
 - (void)monitorTextFieldAction {
+    // 登录文本框值改变事件监听
     [self.loginNameTextField addTarget:self action:@selector(textFieldValueChangedAction:) forControlEvents:UIControlEventEditingChanged];
-    
+
+    // 密码文本框值改变事件监听
     [self.passwordTextField addTarget:self action:@selector(textFieldValueChangedAction:) forControlEvents:UIControlEventEditingChanged];
 }
 
+/**
+ *  自动调用文本框值改变事件
+ */
 - (void)textFieldValueChangedAction:(UITextField *)textField {
+    // 判断文本框是否都有值，如有值则改变按钮的状态和颜色（可点击）
     if (self.loginNameTextField.text.length && self.passwordTextField.text.length) {
         self.loginButton.enabled = YES;
         self.loginButton.backgroundColor = [UIColor orangeColor];
@@ -45,24 +60,37 @@
     }
 }
 
+#pragma mark - 子视图控件处理事件
+/**
+ *  记住密码控件事件监听
+ */
 - (IBAction)memberSwitchClickAction:(UISwitch *)switcher {
     if (!switcher.isOn) {
         self.autoLoginSwitch.on = NO;
     }
 }
 
+/**
+ *  自动登录控件事件监听
+ */
 - (IBAction)autoLoginSwitchClickAction:(UISwitch *)switcher {
     if (switcher.isOn) {
         self.memberSwitch.on = YES;
     }
 }
 
+/**
+ *  登录按钮控件事件监听
+ */
 - (IBAction)loginButtonClickAction:(id)sender {
+    // 添加提示框
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
+    // 判断文本框时候均有值如有值则登录
     if ([self.loginNameTextField.text isEqualToString:@"Rainer"] && [self.passwordTextField.text isEqualToString:@"123456"]) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
+        // 延迟调用登录跳转方法
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self performSegueWithIdentifier:@"loginToList" sender:nil];
         });
@@ -71,7 +99,7 @@
     }
 }
 
-#pragma mark - Navigation
+#pragma mark - 导航栏控制器事件
 /**
  *  在跳转前调用
  */

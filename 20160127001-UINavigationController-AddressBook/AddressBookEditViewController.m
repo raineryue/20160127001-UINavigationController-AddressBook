@@ -20,6 +20,10 @@
 
 @implementation AddressBookEditViewController
 
+#pragma mark - 控制器视图加载
+/**
+ *  控制器视图加载完成
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -51,6 +55,18 @@
     }
 }
 
+/**
+ *  给当前文本框赋值
+ */
+- (void)setupTextFieldValues {
+    self.userNameTextField.text = self.addressBook.userName;
+    self.phoneNumTextField.text = self.addressBook.phoneNum;
+}
+
+#pragma mark - 子控件事件处理
+/**
+ *  修改联系人按钮点击事件
+ */
 - (IBAction)editBarButtonItemClickAction:(UIBarButtonItem *)barButtonItem {
     if ([barButtonItem.title isEqualToString:@"编辑"]) {
         self.userNameTextField.enabled = YES;
@@ -75,11 +91,9 @@
     }
 }
 
-- (void)setupTextFieldValues {
-    self.userNameTextField.text = self.addressBook.userName;
-    self.phoneNumTextField.text = self.addressBook.phoneNum;
-}
-
+/**
+ *  确定按钮点击事件
+ */
 - (IBAction)makeSureButtonClickAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
     
@@ -91,23 +105,15 @@
     }
 }
 
+/**
+ *  触屏事件处理
+ */
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

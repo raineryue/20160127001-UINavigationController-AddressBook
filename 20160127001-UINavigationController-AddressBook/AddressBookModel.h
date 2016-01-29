@@ -10,11 +10,19 @@
 
 @interface AddressBookModel : NSObject
 
+/** 名称 */
 @property (nonatomic, copy) NSString *userName;
+/** 电话 */
 @property (nonatomic, copy) NSString *phoneNum;
 
+/**
+ *  根据字典创建一个联系人模型（对象方法）
+ */
 - (instancetype)initAddressBookWithDictionary:(NSDictionary *)dictionary;
 
+/**
+ *  根据字典创建一个联系人模型（类方法）
+ */
 + (instancetype)addressBookWithDictionary:(NSDictionary *)dictionary;
 
 @end
