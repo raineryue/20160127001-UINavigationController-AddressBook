@@ -29,6 +29,26 @@
 }
 
 /**
+ *  属性编码
+ */
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:_userName forKey:@"userName"];
+    [aCoder encodeObject:_phoneNum forKey:@"phoneNum"];
+}
+
+/**
+ *  初始化属性
+ */
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+        _userName = [aDecoder decodeObjectForKey:@"userName"];
+        _phoneNum = [aDecoder decodeObjectForKey:@"phoneNum"];
+    }
+    
+    return self;
+}
+
+/**
  *  复写description方法
  */
 - (NSString *)description {

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AddressBookModel : NSObject
+@interface AddressBookModel : NSObject <NSCoding>
 
 /** 名称 */
 @property (nonatomic, copy) NSString *userName;

@@ -12,6 +12,8 @@
 #import "AddressBookEditViewController.h"
 #import "AddressBookTableViewCell.h"
 
+#define kDataPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"addressBook.data"]
+
 @interface AddressBookTableViewController () <AddressBookCreateViewControllerDelegate, AddressBookEditViewControllerDelegate>
 
 /** 联系人列表数据 */
@@ -34,13 +36,6 @@
 
 #pragma mark - 表格数据源代理方法
 /**
- *  返回表个的组数
- */
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-/**
  *  返回表格每组的行数
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -57,6 +52,7 @@
     // 2.设置表格行的数据信息
     cell.addressBook = self.addressBookArray[indexPath.row];
     
+    // 3.返回表格行
     return cell;
 }
 
@@ -65,16 +61,14 @@
  *  添加联系人代理方法
  */
 - (void)addressBookCreateViewController:(AddressBookCreateViewController *)viewController addressBook:(AddressBookModel *)addressBook {
-    // 创建一个联系人列表数组
-    NSMutableArray *addressBookList = [NSMutableArray arrayWithArray:self.addressBookArray];
-    
-    // 添加当前新增联系人信息到数组中
-    [addressBookList addObject:addressBook];
-    
     // 将最新联系人数组赋值给当前数组
-    self.addressBookArray = addressBookList;
+    [self.addressBookArray addObject:addressBook];
     
+    // 刷新表格
     [self.tableView reloadData];
+    
+    // 数据归档
+    [NSKeyedArchiver archiveRootObject:self.addressBookArray toFile:kDataPath];
 }
 
 /**
@@ -112,6 +106,7 @@
  *  注销按钮点击事件
  */
 - (IBAction)logoutButtonClickAction:(id)sender {
+#if 0
     // 1.创建提示框控件
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"是否要退出登录" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
@@ -125,6 +120,7 @@
     
     // 4.显示提示框按钮
     [self presentViewController:alertController animated:YES completion:nil];
+#endif
 }
 
 #pragma mark - 属性懒加载
@@ -132,14 +128,12 @@
  *  联系人数组信息
  */
 - (NSMutableArray *)addressBookArray {
-    if (nil == _addressBookArray || 0 == _addressBookArray.count) {
-        _addressBookArray = [NSMutableArray array];
+    if (nil == _addressBookArray) {
+        _addressBookArray = [NSKeyedUnarchiver unarchiveObjectWithFile:kDataPath];
         
-        NSDictionary *dictionary = @{@"userName":@"Rainer", @"phoneNum":@"15022222222"};
-        
-        AddressBookModel *addressBook = [AddressBookModel addressBookWithDictionary:dictionary];
-        
-        [_addressBookArray addObject:addressBook];
+        if (nil == _addressBookArray) {
+            _addressBookArray = [NSMutableArray array];
+        }
     }
     
     return _addressBookArray;

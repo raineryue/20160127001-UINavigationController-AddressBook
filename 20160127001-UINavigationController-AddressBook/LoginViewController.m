@@ -28,6 +28,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 获取本地登录帐号自动登录
+    [self autoLoginMemberDefaultUser];
+    
     // 监听文本框值改变事件
     [self monitorTextFieldAction];
     
@@ -57,6 +60,35 @@
     } else {
         self.loginButton.enabled = NO;
         self.loginButton.backgroundColor = [UIColor lightGrayColor];
+    }
+}
+
+/**
+ *  获取本地登录帐号自动登录
+ */
+- (void)autoLoginMemberDefaultUser {
+    // 创建偏好设置对象
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // 从沙盒中获取已存储的信息并赋值到界面上
+    // 登录帐号文本框
+    self.loginNameTextField.text = [userDefaults objectForKey:@"loginName"];
+    
+    // 记住账号开关
+    self.memberSwitch.on = [userDefaults boolForKey:@"memberPassword"];
+    
+    // 当记住账号开关打开时需要复制密码
+    if (self.memberSwitch.on) {
+        // 密码文本框
+        self.passwordTextField.text = [userDefaults objectForKey:@"password"];
+    }
+    
+    // 自动登录开关
+    self.autoLoginSwitch.on = [userDefaults boolForKey:@"autoLogin"];
+    
+    // 当自动登录开关打开时手动调用登录按钮点击事件
+    if (self.autoLoginSwitch.on) {
+        [self loginButtonClickAction:nil];
     }
 }
 
@@ -93,6 +125,18 @@
         // 延迟调用登录跳转方法
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self performSegueWithIdentifier:@"loginToList" sender:nil];
+            
+            // 创建偏好设置对象
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            
+            // 将登录信息存入偏好设置对象中
+            [userDefaults setObject:self.loginNameTextField.text forKey:@"loginName"];
+            [userDefaults setObject:self.passwordTextField.text forKey:@"password"];
+            [userDefaults setBool:self.memberSwitch.isOn forKey:@"memberPassword"];
+            [userDefaults setBool:self.autoLoginSwitch.isOn forKey:@"autoLogin"];
+            
+            // 将内存中的对象信息存入沙盒中
+            [userDefaults synchronize];
         });
     } else {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
