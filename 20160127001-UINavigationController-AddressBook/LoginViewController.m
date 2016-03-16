@@ -115,15 +115,21 @@
  *  登录按钮控件事件监听
  */
 - (IBAction)loginButtonClickAction:(id)sender {
-    // 添加提示框
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
     // 判断文本框时候均有值如有值则登录
     if ([self.loginNameTextField.text isEqualToString:@"Rainer"] && [self.passwordTextField.text isEqualToString:@"123456"]) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        // 推出键盘
+        [self.view endEditing:YES];
+        
+        // 添加提示框
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
         // 延迟调用登录跳转方法
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 移除提示框
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            // 跳转控制器
             [self performSegueWithIdentifier:@"loginToList" sender:nil];
             
             // 创建偏好设置对象
@@ -139,7 +145,13 @@
             [userDefaults synchronize];
         });
     } else {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        // 创建提示文本框
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"用户名或密码错误";
+        
+        // 2秒后移除提示框
+        [hud removeFromSuperViewOnHide];
+        [hud hide:YES afterDelay:2.0];
     }
 }
 

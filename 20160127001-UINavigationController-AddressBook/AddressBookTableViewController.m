@@ -158,7 +158,6 @@
  *  注销按钮点击事件
  */
 - (IBAction)logoutButtonClickAction:(id)sender {
-#if 0
     // 1.创建提示框控件
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"是否要退出登录" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
@@ -172,7 +171,6 @@
     
     // 4.显示提示框按钮
     [self presentViewController:alertController animated:YES completion:nil];
-#endif
 }
 
 /**
